@@ -1,0 +1,19 @@
+/* NotesTable.css */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  .table-container {
+    margin-top: 20px;
+  }
+  
+  thead.thead-dark th {
+    background-color: #343a40;
+    color: white;
+  }
+  

@@ -1,0 +1,36 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Invoice {
+  id                  Int       @id @default(autoincrement())
+  payerName           String
+  invoiceNumber       String    @default(uuid())
+  issueDate           DateTime
+  billingDate         DateTime
+  paymentDate         DateTime?
+  amount              Float
+  invoiceDocument     String
+  invoiceDocumentType DocumentType @default(PDF)
+  bankSlipDocument    String
+  bankSlipDocumentType DocumentType @default(PDF)
+  status              InvoiceStatus @default(ISSUED)
+
+  @@index([invoiceNumber], name: "invoice_number_idx")
+}
+
+enum InvoiceStatus {
+  ISSUED
+  BILLING_DONE
+  PAYMENT_OVERDUE
+  PAYMENT_DONE
+}
+
+enum DocumentType {
+  PDF
+}
