@@ -43,13 +43,13 @@ A arquitetura da aplicação é cliente-servidor, onde o cliente é o front-end 
 1. Abra um terminal na pasta raiz do projeto e execute o seguinte comando para instanciar o banco de dados:
 
     ```bash
-    docker-compose up
+    docker compose up
     ```
 
 2. Acesse a pasta back-end em um novo terminal e execute o seguinte comando para iniciar o back-end da aplicação:
 
     ```bash
-    ./run.sh
+    . run.sh
     ```
 
 3. Acesse a pasta front-end em um novo terminal e execute os seguintes comandos para iniciar o front-end da aplicação:
